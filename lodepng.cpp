@@ -4562,7 +4562,7 @@ static void decodeGeneric(unsigned char** out, unsigned* w, unsigned* h,
     const unsigned char* data; /*the data in the chunk*/
 
     /*error: size of the in buffer too small to contain next chunk*/
-    if((size_t)((chunk - in) + 12) > insize || chunk < in) CERROR_BREAK(state->error, 30);
+    if((size_t)((chunk - in) + 12) > insize || chunk < in) break;
 
     /*length of the data of the chunk, excluding the length bytes, chunk type and CRC bytes*/
     chunkLength = lodepng_chunk_length(chunk);
